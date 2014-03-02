@@ -4,7 +4,7 @@ Donate link: http://roidayan.com
 Tags: youtube, flv, player, playlist, video
 Requires at least: 3.2.1
 Tested up to: 3.3.1
-Stable tag: 1.0
+Stable tag: 1.01
 
 Simple youtube plugin to help embed youtube videos
 with playlist by time.
@@ -23,8 +23,8 @@ playlist css is from flowplayer playlist plugin.
 
 == Installation ==
 
-1. Extract to plugins directory.
-2. Check the settings page if you want to change the defaults.
+Extract to plugins directory.
+Use shortcode [youtube] to add vidoes.
 
 * example1:
     `[youtube video='id']`
@@ -38,12 +38,12 @@ playlist css is from flowplayer playlist plugin.
 	[/youtube]`
 	
 Options for the shortcode:
-*    id - youtube video id.
+*   id - youtube video id.
 *	width - width of the video frame.
-*    height - height of the video frame.
+*   height - height of the video frame.
 *	class - class of the playlist.
 *	side - side of the playlist. left or right.
-*    vparams - additional youtube video parameters.
+*   vparams - additional youtube video parameters.
 
 Available youtube video parameters can be found here:
 *    http://code.google.com/apis/youtube/player_parameters.html
@@ -60,6 +60,9 @@ You need to edit playlist.css
 2. playlist style from flowplayer on the left side
 
 == Changelog ==
+
+= 1.01 =
+* updated readme.
 
 = 1.0 =
 * first

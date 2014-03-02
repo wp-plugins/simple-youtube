@@ -3,7 +3,7 @@
 Plugin Name: Simple YouTube
 Plugin URI: http://roidayan.com
 Description: YouTube with playlist
-Version: 1.0
+Version: 1.01
 Author: Roi Dayan
 Author URI: http://roidayan.com
 License: GPLv2
