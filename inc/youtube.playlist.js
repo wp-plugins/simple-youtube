@@ -1,5 +1,5 @@
 /**
- * youtube.playlist 1.0
+ * youtube.playlist 1.5
  * by Roi Dayan
  *
  * Author: Roi Dayan <roi.dayan@gmail.com>
@@ -34,15 +34,6 @@ if (!('onYouTubePlayerAPIReady' in window)) {
 		jQuery('.ytplayer').each(function(idx) {
 			jQuery(this).ytplaylist();
 		});
-		//if (YTPlaylistReady.indexOf(playerId) < 0)
-		//    YTPlaylistReady.push(playerId);
-
-
-		// TODO need to bind to inner function per player
-		// probably need to save dictionary of playerId and annymous function
-
-		//var player = document.getElementById(playerId);
-		//player.addEventListener("onStateChange", "onytplayerStateChange");
 	}
 }
 

@@ -62,7 +62,7 @@ You need to edit playlist.css
 == Changelog ==
 
 = 1.5 =
-* use youtube iframe for html5 player instead of flash player.
+* use youtube html5 player instead of flash player.
 
 = 1.01 =
 * updated readme.

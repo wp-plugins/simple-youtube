@@ -9,12 +9,6 @@ Author URI: http://roidayan.com
 License: GPLv2
 */
 
-/* TODO
-    settings page for:
-        default class
-        default template
-*/
-
 class WPSimpleYouTube {
 
     function __construct() {
@@ -95,15 +89,6 @@ class WPSimpleYouTube {
             }
 			
 			$json_data = json_encode($data);
-
-            // $ytopts = array("'playerId': '$hash'",
-							// "'playlist': $data",
-							// "'videoId': '$video'",
-						// );
-            // if (!empty($class))
-                // $ytopts[] = "'class': '$class'";
-            // $ytopts = implode(',', $ytopts);
-
 
 			$html .= $playlist_div;
 			$html .= <<<EOT
