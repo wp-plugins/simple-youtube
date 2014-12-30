@@ -13,11 +13,7 @@ with playlist by time.
 
 Simple youtube plugin to help embed youtube videos.
 
-Support for playlist by time.
-
-i.e. playlist to jump to specific time in the video.
-
-[example page](http://testwp.roidayan.com/2012/02/24/demo-youtube/ "example page")
+Support for playlist by time (jump to specific time in the video).
 
 playlist css is from flowplayer playlist plugin.
 
