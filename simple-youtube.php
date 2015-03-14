@@ -60,8 +60,8 @@ class WPSimpleYouTube {
 
     function add_scripts() {
         wp_enqueue_script('jquery');
-		wp_enqueue_script('youtube-api', '//www.youtube.com/player_api', null, '1.0', false);
-        wp_enqueue_script('youtube-playlist', $this->plugin_url . 'inc/youtube.playlist.js', null, '1.0', false);
+		wp_enqueue_script('youtube-api', '//www.youtube.com/player_api', array('jquery'), '1.0', false);
+		wp_enqueue_script('youtube-playlist', $this->plugin_url . 'inc/youtube.playlist.js', array('youtube-api'), '1.0', false);
     }
 
     function embed_player($video, $width, $height, $playlist, $side, $class, $vparams) {
