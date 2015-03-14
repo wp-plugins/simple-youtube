@@ -27,18 +27,23 @@ function convertToSeconds(time) {
     return parseInt(s[0])*60 + parseInt(s[1]);
 }
 
-YTPlaylistReady = [];
-/* youtube callback api */
-if (!('onYouTubePlayerAPIReady' in window)) {
-	window.onYouTubePlayerAPIReady = function() {
-		jQuery('.ytplayer').each(function(idx) {
-			jQuery(this).ytplaylist();
-		});
-	}
-}
+var YTPlaylistReady = [];
+var YTPlaylistInit = false;
 
 jQuery( document ).ready(function( $ ) {
-	//
+	/* youtube callback api */
+	if (!('onYouTubeIframeAPIReady' in window)) {
+		window.onYouTubeIframeAPIReady = function() {
+			jQuery('.ytplayer').each(function(idx) {
+				jQuery(this).ytplaylist();
+			});
+		}
+	}
+
+	if (window.YT && window.YT.loaded) {
+		/* maybe youtube script already loaded so we missed the api callback */
+		onYouTubeIframeAPIReady();
+	}
 });
 
 /**
@@ -199,7 +204,7 @@ jQuery( document ).ready(function( $ ) {
 				params.container.appendChild(playerContainer);
 				var YOUTUBE_CONTROLS_HEIGHT = 30;
 				var PLAYER_HEIGHT_TO_WIDTH_RATIO = 9 / 16;
-				
+
 				return new YT.Player(playerContainer, {
 					height: height ||
 							width * PLAYER_HEIGHT_TO_WIDTH_RATIO + YOUTUBE_CONTROLS_HEIGHT,
