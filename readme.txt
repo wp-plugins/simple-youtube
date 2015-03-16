@@ -4,7 +4,7 @@ Donate link: http://roidayan.com
 Tags: youtube, flv, player, playlist, video
 Requires at least: 3.2.1
 Tested up to: 3.3.1
-Stable tag: 1.5
+Stable tag: 1.5.1
 
 Simple youtube plugin to help embed youtube videos
 with playlist by time.
@@ -56,6 +56,9 @@ You need to edit playlist.css
 2. playlist style from flowplayer on the left side
 
 == Changelog ==
+
+= 1.5.1 =
+* fix bug sometimes not initialising
 
 = 1.5 =
 * use youtube html5 player instead of flash player.

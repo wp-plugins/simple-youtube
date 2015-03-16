@@ -1,5 +1,5 @@
 /**
- * youtube.playlist 1.5
+ * youtube.playlist
  * by Roi Dayan
  *
  * Author: Roi Dayan <roi.dayan@gmail.com>
