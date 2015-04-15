@@ -1,6 +1,6 @@
 === Simple YouTube ===
 Contributors: roidayan
-Donate link: http://roidayan.com
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SQP78SMRC8MUG
 Tags: youtube, flv, player, playlist, video
 Requires at least: 3.2.1
 Tested up to: 3.3.1
