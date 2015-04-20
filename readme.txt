@@ -3,7 +3,7 @@ Contributors: roidayan
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SQP78SMRC8MUG
 Tags: youtube, flv, player, playlist, video
 Requires at least: 3.2.1
-Tested up to: 3.3.1
+Tested up to: 4.1
 Stable tag: 1.5.1
 
 Simple youtube plugin to help embed youtube videos
