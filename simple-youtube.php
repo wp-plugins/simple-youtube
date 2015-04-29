@@ -3,7 +3,7 @@
 Plugin Name: Simple YouTube
 Plugin URI: http://roidayan.com
 Description: YouTube with playlist
-Version: 1.5.2
+Version: 1.5.3
 Author: Roi Dayan
 Author URI: http://roidayan.com
 License: GPLv2
@@ -62,7 +62,6 @@ class WPSimpleYouTube {
         wp_enqueue_script('jquery');
 		wp_enqueue_script('youtube-api', '//www.youtube.com/player_api', array('jquery'), '1.0', false);
 		wp_enqueue_script('youtube-playlist', $this->plugin_url . 'inc/youtube.playlist.js', array('youtube-api'), '1.0', false);
-		wp_enqueue_script( 'fitvids' , 'https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js' , array('jquery'), '1.0' );
     }
 
     function embed_player($video, $width, $height, $playlist, $side, $class, $vparams) {
