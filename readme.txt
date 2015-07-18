@@ -3,7 +3,7 @@ Contributors: roidayan
 Donate link: http://roidayan.com
 Tags: youtube, flv, player, playlist, video
 Requires at least: 3.2.1
-Tested up to: 4.1
+Tested up to: 4.2.2
 Stable tag: 1.5.3
 
 Simple youtube plugin to help embed youtube videos
@@ -58,7 +58,7 @@ You need to edit playlist.css
 == Changelog ==
 
 = 1.5.3 =
-* remove fitvids script that was added by mistake
+* Allow comma in titles
 
 = 1.5.2 =
 * fix php error
