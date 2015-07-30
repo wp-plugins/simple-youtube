@@ -3,7 +3,7 @@
 Plugin Name: Simple YouTube
 Plugin URI: http://roidayan.com
 Description: YouTube with playlist
-Version: 1.5.3
+Version: 1.5.4
 Author: Roi Dayan
 Author URI: http://roidayan.com
 License: GPLv2
@@ -12,17 +12,13 @@ License: GPLv2
 class WPSimpleYouTube {
 
     function __construct() {
-		$this->plugin_url = plugin_dir_url(__FILE__);
-        $this->settings = strtolower(__CLASS__.'_settings');
-
-        if (!is_admin()) {
-            add_action('init', array(&$this, 'add_styles'));
-            add_action('wp_enqueue_scripts', array(&$this, 'add_scripts'));
-            add_shortcode('youtube', array(&$this, 'shortcode'));
+        if ( ! is_admin() ) {
+            add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts') );
+            add_shortcode( 'youtube', array( $this, 'shortcode') );
         }
     }
 
-    function shortcode($atts, $content = null) {
+    function shortcode( $atts, $content = null ) {
         extract(shortcode_atts(array(
             'width' => 400,
             'height' => '',
@@ -35,13 +31,13 @@ class WPSimpleYouTube {
         $r = '';
         $playlist = null;
 
-        if (!empty($video)) {
-            if (!empty($content)) {
-                $content = strip_tags($content);
-                $content_lines = explode("\n", $content);
+        if ( ! empty($video) ) {
+            if ( ! empty( $content ) ) {
+                $content = strip_tags( $content );
+                $content_lines = explode( "\n", $content );
                 $playlist = array();
-                foreach ($content_lines as $line) {
-                    if (!empty($line)) {
+                foreach ( $content_lines as $line ) {
+                    if ( ! empty( $line ) ) {
 						$pos = strrpos( $line, ',' );
 						$playlist[] = array(
 							trim( substr( $line, 0, $pos ) ),
@@ -51,27 +47,44 @@ class WPSimpleYouTube {
                 }
             }
 
-            $r = $this->embed_player($video, intval($width), intval($height),
-                                     $playlist, $side, $class, $vparams);
+            $r = $this->embed_player(
+							$video,
+							intval( $width ),
+							intval( $height ),
+                            $playlist,
+							$side,
+							$class,
+							$vparams );
         }
 
         return $r;
     }
 
-    function add_styles() {
-        wp_enqueue_style('youtube-playlist', $this->plugin_url . 'inc/playlist.css', false, '1.0', 'all');
+    function enqueue_scripts() {
+		wp_enqueue_style(
+			'youtube-playlist',
+			plugins_url( 'inc/playlist.css', __FILE__ ),
+			false,
+			'1.0' );
+
+		wp_enqueue_script(
+			'youtube-api',
+			'//www.youtube.com/player_api',
+			false,
+			'1.0',
+			false );
+
+		wp_enqueue_script(
+			'youtube-playlist',
+			plugins_url( 'inc/youtube.playlist.js', __FILE__ ),
+			array( 'jquery', 'youtube-api' ),
+			'1.0',
+			false );
     }
 
-    function add_scripts() {
-        wp_enqueue_script('jquery');
-		wp_enqueue_script('youtube-api', '//www.youtube.com/player_api', array('jquery'), '1.0', false);
-		wp_enqueue_script('youtube-playlist', $this->plugin_url . 'inc/youtube.playlist.js', array('youtube-api'), '1.0', false);
-		wp_enqueue_script( 'fitvids' , 'https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js' , array('jquery'), '1.0' );
-    }
-
-    function embed_player($video, $width, $height, $playlist, $side, $class, $vparams) {
+    function embed_player( $video, $width, $height, $playlist, $side, $class, $vparams ) {
         $salt = substr(md5(uniqid(rand(), true)), 0, 10);
-        $hash = __CLASS__.'_'. md5($video.$salt);
+        $hash = __CLASS__ . '_' . md5($video.$salt);
         $hash_pl = $hash.'_pl';
 
         $html = '<div id="' . $hash . '" class="ytplayer" data-video="'.$video.'"'.
@@ -112,4 +125,5 @@ EOT;
     }
 }
 
-new WPSimpleYouTube();
+
+new WPSimpleYouTube;

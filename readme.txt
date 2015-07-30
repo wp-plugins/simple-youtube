@@ -1,10 +1,10 @@
 === Simple YouTube ===
 Contributors: roidayan
 Donate link: http://roidayan.com
-Tags: youtube, flv, player, playlist, video
+Tags: youtube, player, playlist, video
 Requires at least: 3.2.1
 Tested up to: 4.2.2
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 
 Simple youtube plugin to help embed youtube videos
 with playlist by time.
@@ -56,6 +56,9 @@ You need to edit playlist.css
 2. playlist style from flowplayer on the left side
 
 == Changelog ==
+
+= 1.5.4 =
+* Refactor and cleanup
 
 = 1.5.3 =
 * Allow comma in titles
